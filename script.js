@@ -156,5 +156,24 @@ const sendForm = async (event) => {
     
 
 }
+// script.js
 
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('box'); // checkbox
+    const bodyElement = document.body;
+
+    
+    bodyElement.classList.remove('whiteMode'); 
+    themeToggle.checked = false; // checkbox esteja desmarcado ao iniciar
+
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            
+            bodyElement.classList.add('whiteMode'); 
+        } else {
+            
+            bodyElement.classList.remove('whiteMode'); 
+        }
+    });
+});
 form.addEventListener('submit', sendForm)
